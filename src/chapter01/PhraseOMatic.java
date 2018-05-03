@@ -17,6 +17,6 @@ public class PhraseOMatic {
         String phrase = wordListOne[rand1] + " " + wordListTwo[rand2] + " " + wordListThree[rand3];
 
         System.out.println("Всё, что вам нужно, - это " + phrase);
-        System.out.println("Всё, что вам нужно, - это " + phrase);
+        //System.out.println("Всё, что вам нужно, - это " + phrase);
     }
 }
