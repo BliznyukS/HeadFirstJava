@@ -15,6 +15,7 @@ public class MovieTestDrive {
 
         Movie three = new Movie();
         three.title = "Byte-club";
+        //System.out.println(three.title);
         three.genre = "Tragedy but fun";
         three.rating = 127;
 
