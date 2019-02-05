@@ -2,9 +2,9 @@ package chapter01;
 
 public class PhraseOMatic {
     public static void main(String[] args) {
-        String[] wordListOne = {"круглосуточный","трех-звёздный","30000-футовый","взаимный","умный","шесть"};
-        String[] wordListTwo = {"трудный","фирменный","сетевой","общий","совместный","ускоренный","распределенный"};
-        String[] wordListThree = {"обзор","легко","портал","талант","подход"};
+        String[] wordListOne = {"круглосуточный", "трех-звёздный", "30000-футовый", "взаимный", "умный", "шесть"};
+        String[] wordListTwo = {"трудный", "фирменный", "сетевой", "общий", "совместный", "ускоренный", "распределенный"};
+        String[] wordListThree = {"обзор", "легко", "портал", "талант", "подход"};
 
         int oneLength = wordListOne.length;
         int twoLength = wordListTwo.length;

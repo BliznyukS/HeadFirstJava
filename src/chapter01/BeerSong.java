@@ -2,12 +2,12 @@ package chapter01;
 
 public class BeerSong {
     public static void main(String[] args) {
-        int beerNum = 99;
+        int beerNum = 9;
         String word = "бутылок (бутылки) ";
 
-        while (beerNum > 0){
+        while (beerNum > 0) {
 
-            if (beerNum == 1){
+            if (beerNum == 1) {
                 word = "бутылка ";
             }
 

@@ -18,7 +18,7 @@ public class Beginning {
 
         System.out.println("Перед началом цикла");
 
-        while (z < 4){
+        while (z < 4) {
             System.out.println("Внутри цикла");
             System.out.println("z равно - " + z);
 

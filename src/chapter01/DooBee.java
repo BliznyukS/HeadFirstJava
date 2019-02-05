@@ -2,14 +2,14 @@ package chapter01;
 
 public class DooBee {
     public static void main(String[] args) {
-        int x =1;
+        int x = 1;
 
-        while (x < 3){
+        while (x < 3) {
             System.out.print("Doo");
             System.out.print("Bee");
             x++;
         }
-        if (x == 3){
+        if (x == 3) {
             System.out.println("Do");
         }
     }

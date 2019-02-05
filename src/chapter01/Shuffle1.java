@@ -16,7 +16,7 @@ public class Shuffle1 {
                 System.out.print("b c");
             }
 
-            if (x == 1){
+            if (x == 1) {
                 System.out.print("d");
                 x--;
             }
