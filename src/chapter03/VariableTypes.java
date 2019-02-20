@@ -10,6 +10,11 @@ public class VariableTypes {
         short s = 32767;
         int i = 2147483647;
         long l = 3656456799999999999L;
+        float fl = 3.4f;
+        double d = 5.0;
+
+        int sum = (int) c + i;
+        System.out.println(sum);
 
     }
 }
