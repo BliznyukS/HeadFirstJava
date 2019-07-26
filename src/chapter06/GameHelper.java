@@ -1,4 +1,4 @@
-package chapter05.simpleGame;
+package chapter06;
 
 import java.io.*;
 import java.util.*;
