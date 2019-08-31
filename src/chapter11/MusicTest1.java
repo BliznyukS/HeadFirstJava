@@ -14,7 +14,7 @@ public class MusicTest1 {
         }
         catch (MidiUnavailableException ex){
             System.out.println("fail");
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
     }
 
