@@ -31,7 +31,7 @@ public class MiniMiniMusicApp {
 
             player.start();
 
-        } catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
