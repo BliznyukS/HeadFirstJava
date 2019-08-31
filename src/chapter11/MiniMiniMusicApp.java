@@ -27,9 +27,11 @@ public class MiniMiniMusicApp {
             MidiEvent noteOff = new MidiEvent(b, 16);
             track.add(noteOff);
 
+
             player.setSequence(seq);
 
             player.start();
+            System.out.println("Start");
 
         } catch (Exception ex) {
             ex.printStackTrace();
