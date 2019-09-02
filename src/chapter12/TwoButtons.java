@@ -25,7 +25,7 @@ public class TwoButtons  {
         colorButton.addActionListener(new ColorButtonListener());
 
         label = new JLabel("I'm a label");
-        MyDrawPanel1 drawPanel = new MyDrawPanel1();
+        MyDrawPanel drawPanel = new MyDrawPanel();
 
         frame.getContentPane().add(BorderLayout.SOUTH, colorButton);
         frame.getContentPane().add(BorderLayout.CENTER, drawPanel);
@@ -49,8 +49,8 @@ public class TwoButtons  {
     }  // close inner class
 
 }
-
-class MyDrawPanel1 extends JPanel {
+/*
+class MyDrawPanel extends JPanel {
 
     public void paintComponent(Graphics g) {
 
@@ -67,7 +67,7 @@ class MyDrawPanel1 extends JPanel {
     }
 
 }
-
+*/
 
 
 
