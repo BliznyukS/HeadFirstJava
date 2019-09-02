@@ -1,6 +1,7 @@
 package chapter12;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,11 +18,16 @@ public class SimpleGui1B implements ActionListener {
         button = new JButton("click me");
 
         button.addActionListener(this);
+        MyDrawPanel panel = new MyDrawPanel();
 
-        frame.getContentPane().add(button);
+        frame.getContentPane().add(BorderLayout.WEST, button);
+        frame.getContentPane().add(BorderLayout.CENTER, panel);
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
         frame.setVisible(true);
+
+
 
     }
 
