@@ -23,7 +23,7 @@ public class SimpleAnimation {
         frame.setSize(300, 300);
         frame.setVisible(true);
 
-        for (int i = 0; i < 130; i++){
+        for (int i = 0; i < 130; i++) {
             x++;
             y++;
 
@@ -31,7 +31,7 @@ public class SimpleAnimation {
 
             try {
                 Thread.sleep(50);
-            } catch (Exception ex){
+            } catch (Exception ex) {
 
             }
         }
@@ -39,8 +39,12 @@ public class SimpleAnimation {
     }
 
     class MyDrawPanelAnimation extends JPanel {
-        public void paintComponent (Graphics graphics){
-            graphics.setColor(Color.red);
+        public void paintComponent(Graphics graphics) {
+
+            graphics.setColor(Color.gray);
+            graphics.fillRect(0,0, this.getWidth(), this.getHeight());
+
+            graphics.setColor(Color.orange);
             graphics.fillOval(x, y, 40, 40);
         }
     }
