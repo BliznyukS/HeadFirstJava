@@ -1,9 +1,12 @@
 package chapter13;
 
+import javax.sound.midi.MidiEvent;
 import javax.sound.midi.Sequence;
 import javax.sound.midi.Sequencer;
 import javax.sound.midi.Track;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class BeatBox {
@@ -44,5 +47,53 @@ public class BeatBox {
 
     }
 
+    public void setUpMidi() {
+
+    }
+
+    public void buildTrackAndStart() {
+
+    }
+
+    public class MyStartListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    public class MyStopListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    public class MyUpTempoListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    public class MyDownTempoListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    public void makeTracks(int[] list){
+
+    }
+
+    public MidiEvent makeEvent (int comd, int chan, int one, int two, int tick) {
+
+        return null;
+    }
 
 }
