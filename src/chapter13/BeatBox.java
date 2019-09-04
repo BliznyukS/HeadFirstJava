@@ -1,9 +1,6 @@
 package chapter13;
 
-import javax.sound.midi.MidiEvent;
-import javax.sound.midi.Sequence;
-import javax.sound.midi.Sequencer;
-import javax.sound.midi.Track;
+import javax.sound.midi.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -48,7 +45,7 @@ public class BeatBox {
         theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         BorderLayout layout = new BorderLayout();
         JPanel background = new JPanel(layout);
-        background.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        background.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         checBoxList = new ArrayList<JCheckBox>();
         Box buttonBox = new Box(BoxLayout.Y_AXIS);
@@ -100,6 +97,16 @@ public class BeatBox {
     }
 
     public void setUpMidi() {
+
+        try {
+            sequencer = MidiSystem.getSequencer();
+            sequencer.open();
+            sequence = new Sequence(Sequence.PPQ, 4);
+            track = sequence.createTrack();
+            sequencer.setTempoInBPM(120);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
