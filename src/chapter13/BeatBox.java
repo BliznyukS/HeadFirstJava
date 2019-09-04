@@ -5,6 +5,7 @@ import javax.sound.midi.Sequence;
 import javax.sound.midi.Sequencer;
 import javax.sound.midi.Track;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -43,8 +44,59 @@ public class BeatBox {
     }
 
     private void buildGUI() {
+        theFrame = new JFrame("Cyber BeatBox");
+        theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        BorderLayout layout = new BorderLayout();
+        JPanel background = new JPanel(layout);
+        background.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
+        checBoxList = new ArrayList<JCheckBox>();
+        Box buttonBox = new Box(BoxLayout.Y_AXIS);
 
+        JButton start = new JButton("Start");
+        start.addActionListener(new MyStartListener());
+        buttonBox.add(start);
+
+        JButton stop = new JButton("Stop");
+        stop.addActionListener(new MyDownTempoListener());
+        buttonBox.add(stop);
+
+        JButton upTempo = new JButton("Tempo Up");
+        upTempo.addActionListener(new MyUpTempoListener());
+        buttonBox.add(upTempo);
+
+        JButton downTempo = new JButton("Down Tempo");
+        downTempo.addActionListener(new MyDownTempoListener());
+        buttonBox.add(downTempo);
+
+        Box nameBox = new Box(BoxLayout.Y_AXIS);
+        for (int i = 0; i < 16; i++) {
+            nameBox.add(new Label(instrumentNames[i]));
+        }
+
+        background.add(BorderLayout.EAST, buttonBox);
+        background.add(BorderLayout.WEST, nameBox);
+
+        theFrame.getContentPane().add(background);
+
+        GridLayout grid = new GridLayout(16, 16);
+        grid.setVgap(1);
+        grid.setHgap(2);
+        mainPanel = new JPanel(grid);
+        background.add(BorderLayout.CENTER, mainPanel);
+
+        for (int i = 0; i < 256; i++) {
+            JCheckBox c = new JCheckBox();
+            c.setSelected(false);
+            checBoxList.add(c);
+            mainPanel.add(c);
+        }
+
+        setUpMidi();
+
+        theFrame.setBounds(50, 50, 300, 300);
+        theFrame.pack();
+        theFrame.setVisible(true);
     }
 
     public void setUpMidi() {
@@ -87,11 +139,11 @@ public class BeatBox {
         }
     }
 
-    public void makeTracks(int[] list){
+    public void makeTracks(int[] list) {
 
     }
 
-    public MidiEvent makeEvent (int comd, int chan, int one, int two, int tick) {
+    public MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
 
         return null;
     }
