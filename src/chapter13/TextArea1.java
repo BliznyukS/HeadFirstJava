@@ -4,10 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
-public class TextArea1 implements ActionListener {
+public class TextArea1 implements ActionListener, ItemListener {
 
     JTextArea text;
+    JCheckBox check;
 
     public static void main(String[] args) {
         TextArea1 gui = new TextArea1();
@@ -19,7 +22,14 @@ public class TextArea1 implements ActionListener {
         JPanel panel = new JPanel();
         JButton button = new JButton("Just click it !");
 
+        check = new JCheckBox("Goes to 11");
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        check.addItemListener(this);
+
+        check.setSelected(true);
+        check.setSelected(false);
 
         button.addActionListener(this);
 
@@ -34,6 +44,7 @@ public class TextArea1 implements ActionListener {
 
         frame.getContentPane().add(BorderLayout.CENTER, panel);
         frame.getContentPane().add(BorderLayout.SOUTH, button);
+        frame.getContentPane().add(BorderLayout.WEST, check);
 
         frame.setSize(350, 300);
         frame.setVisible(true);
@@ -46,4 +57,11 @@ public class TextArea1 implements ActionListener {
         text.append("button clicked \n ");
     }
 
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        String onOrOff = "off";
+
+        if (check.isSelected()) onOrOff = "on";
+        System.out.println("Check box is " + onOrOff);
+    }
 }
