@@ -55,7 +55,7 @@ public class BeatBox {
         buttonBox.add(start);
 
         JButton stop = new JButton("Stop");
-        stop.addActionListener(new MyDownTempoListener());
+        stop.addActionListener(new MyStopListener());
         buttonBox.add(stop);
 
         JButton upTempo = new JButton("Tempo Up");
