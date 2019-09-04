@@ -148,7 +148,7 @@ public class BeatBox {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            buildTrackAndStart();
         }
     }
 
@@ -156,7 +156,7 @@ public class BeatBox {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            sequencer.stop();
         }
     }
 
@@ -164,7 +164,8 @@ public class BeatBox {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            float tempoFactor = sequencer.getTempoFactor();
+            sequencer.setTempoFactor((float) (tempoFactor * 1.03));
         }
     }
 
@@ -172,17 +173,35 @@ public class BeatBox {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            float tempoFactor = sequencer.getTempoFactor();
+            sequencer.setTempoFactor((float) (tempoFactor * 0.97));
         }
     }
 
     public void makeTracks(int[] list) {
 
+        for (int i =0; i < 16; i++) {
+            int key = list[i];
+
+            if (key != 0 ) {
+                track.add(makeEvent(144, 9, key, 100, i));
+                track.add(makeEvent(128, 9, key, 100, i +1));
+            }
+        }
     }
 
     public MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
 
-        return null;
+        MidiEvent event = null;
+
+        try {
+            ShortMessage a = new ShortMessage();
+            a.setMessage(comd, chan, one, two);
+            event = new MidiEvent(a, tick);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return event;
     }
 
 }
