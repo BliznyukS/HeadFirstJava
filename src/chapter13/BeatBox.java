@@ -180,12 +180,12 @@ public class BeatBox {
 
     public void makeTracks(int[] list) {
 
-        for (int i =0; i < 16; i++) {
+        for (int i = 0; i < 16; i++) {
             int key = list[i];
 
-            if (key != 0 ) {
+            if (key != 0) {
                 track.add(makeEvent(144, 9, key, 100, i));
-                track.add(makeEvent(128, 9, key, 100, i +1));
+                track.add(makeEvent(128, 9, key, 100, i + 1));
             }
         }
     }
