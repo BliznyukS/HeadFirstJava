@@ -1,5 +1,7 @@
 package chapter13;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import javax.sound.midi.*;
 import javax.swing.*;
 import java.awt.*;
@@ -66,6 +68,14 @@ public class BeatBox {
         JButton downTempo = new JButton("Down Tempo");
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
+
+        JButton sendSerialize = new JButton("Send Serialize");
+        sendSerialize.addActionListener(new MySendListener());
+        buttonBox.add(sendSerialize);
+
+        JButton readSerialize = new JButton("Read Serialize");
+        readSerialize.addActionListener(new MyReadListener());
+        buttonBox.add(readSerialize);
 
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
@@ -228,6 +238,7 @@ public class BeatBox {
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
+            System.out.println("Send");
         }
     }
 
