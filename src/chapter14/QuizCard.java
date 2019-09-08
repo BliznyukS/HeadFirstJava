@@ -6,11 +6,11 @@ public class QuizCard {
 
     }
 
-    public int getQuestion() {
-        return 1;
+    public String getQuestion() {
+        return "1";
     }
 
-    public int getAnswer() {
-        return 1;
+    public String getAnswer() {
+        return "2";
     }
 }
