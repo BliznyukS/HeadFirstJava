@@ -31,9 +31,9 @@ public class GameSaverTest {
             GameCharacter twoRestore = (GameCharacter) is.readObject();
             GameCharacter threeRestore = (GameCharacter) is.readObject();
 
-            System.out.println("type of first character : " + oneRestore);
-            System.out.println("type of second character : " + twoRestore);
-            System.out.println("type of third character : " + threeRestore);
+            System.out.println("First character : " + oneRestore.getType() + " " + oneRestore.getPower() + " " + oneRestore.getWeapons());
+            System.out.println("Second character : " + twoRestore.getType() + " " + twoRestore.getPower() + " " + twoRestore.getWeapons());
+            System.out.println("Third character : " + threeRestore.getType() + " " + threeRestore.getPower() + " " + threeRestore.getWeapons());
 
         } catch (Exception ex) {
             ex.printStackTrace();
