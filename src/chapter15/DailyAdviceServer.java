@@ -12,11 +12,11 @@ public class DailyAdviceServer {
     public void go() {
 
         try {
-            ServerSocket serverSocket = new ServerSocket(4242);
+            ServerSocket serverSock = new ServerSocket(4242);
 
             while (true) {
 
-                Socket sock = serverSocket.accept();
+                Socket sock = serverSock.accept();
 
                 PrintWriter writer = new PrintWriter(sock.getOutputStream());
                 String advice = getAdvice();
@@ -24,6 +24,7 @@ public class DailyAdviceServer {
                 writer.close();
                 System.out.println(advice);
             }
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
