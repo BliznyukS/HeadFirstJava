@@ -3,10 +3,12 @@ package chapter15;
 public class MyRunnable implements Runnable {
 
     public void run() {
+        go();
 
     }
 
     public void go() {
+        doMore();
 
     }
 
@@ -15,13 +17,13 @@ public class MyRunnable implements Runnable {
     }
 }
 
- class ThreadTester {
-     public static void main(String[] args) {
-         Runnable threadJob = new MyRunnable();
-         Thread myThread = new Thread(threadJob);
+class ThreadTester {
+    public static void main(String[] args) {
+        Runnable threadJob = new MyRunnable();
+        Thread myThread = new Thread(threadJob);
 
-         myThread.start();
+        myThread.start();
 
-         System.out.println(" Back to main method");
-     }
- }
+        System.out.println("Back to main method");
+    }
+}
