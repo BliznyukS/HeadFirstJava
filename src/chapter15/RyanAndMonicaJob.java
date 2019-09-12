@@ -54,11 +54,11 @@ public class RyanAndMonicaJob implements Runnable {
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName() + "Wakeup");
+            System.out.println(Thread.currentThread().getName() + " wakeup");
             account.withdraw(amount);
-            System.out.println(Thread.currentThread().getName() + "Finishing transaction");
+            System.out.println(Thread.currentThread().getName() + " finishing transaction");
         } else {
-            System.out.println("Sorry for client - " + Thread.currentThread().getName() + " not enough money");
+            System.out.println("Sorry for client - " + Thread.currentThread().getName() + ", not enough money");
         }
     }
 }
