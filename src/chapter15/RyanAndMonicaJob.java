@@ -33,7 +33,7 @@ public class RyanAndMonicaJob implements Runnable {
     public void run() {
 
         for (int x = 0; x < 10; x++) {
-            makeWithdrawal(10);
+            makeWithdrawal(7);
 
             if (account.getBalance() < 0) {
                 System.out.println("Over Limmit !");
@@ -43,7 +43,7 @@ public class RyanAndMonicaJob implements Runnable {
 
     }
 
-    private void makeWithdrawal(int amount) {
+    private synchronized void makeWithdrawal(int amount) {
 
         if (account.getBalance() >= amount) {
             System.out.println(Thread.currentThread().getName() + "Going to get money");
