@@ -1,6 +1,6 @@
 package chapter15;
 
-class TestSync implements Runnable{
+class TestSync implements Runnable {
 
     private int balance;
 
@@ -8,11 +8,11 @@ class TestSync implements Runnable{
     public void run() {
         for (int i = 0; i < 50; i++) {
             increment();
-            System.out.println("Balance : " + balance);
+            System.out.println("Balance : " + balance + " " + Thread.currentThread().getName());
         }
     }
 
-    private void increment() {
+    private synchronized void increment() {
         int i = balance;
         balance = i + 1;
     }
@@ -23,6 +23,9 @@ public class TestSyncTest {
         TestSync job = new TestSync();
         Thread a = new Thread(job);
         Thread b = new Thread(job);
+
+        a.setName("A");
+        b.setName("B");
 
         a.start();
         b.start();
