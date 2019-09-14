@@ -17,7 +17,7 @@ public class Jukebox3 {
     private void go() {
         getSongs();
         System.out.println("Before sort - " + songList);
-        Collections.sort(songList);
+        //Collections.sort(songList);
         System.out.println("Afetr sort - " + songList);
     }
 
@@ -38,7 +38,7 @@ public class Jukebox3 {
 
     void addSong(String lineToParse) {
         String[] tokens = lineToParse.split("/");
-        Song nextSong = new Song(tokens[0], tokens[1], tokens[2], tokens[3])
+        Song nextSong = new Song(tokens[0], tokens[1], tokens[2], tokens[3]);
         songList.add(nextSong);
     }
 }
