@@ -18,7 +18,7 @@ public class Jukebox3 {
         getSongs();
         System.out.println("Before sort - " + songList);
         Collections.sort(songList);
-        System.out.println("Afetr sort - " + songList);
+        System.out.println("After sort - " + songList);
     }
 
     void getSongs() {
