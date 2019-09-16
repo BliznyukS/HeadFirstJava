@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Jukebox3 {
 
@@ -14,11 +15,24 @@ public class Jukebox3 {
         new Jukebox3().go();
     }
 
+    class ArtistCompare implements Comparator<Song> {
+
+        @Override
+        public int compare(Song one, Song two) {
+            return one.getArtist().compareTo(two.getArtist());
+        }
+    }
+
     private void go() {
         getSongs();
         System.out.println("Before sort - " + songList);
         Collections.sort(songList);
         System.out.println("After sort - " + songList);
+
+        ArtistCompare artistCompare = new ArtistCompare();
+        Collections.sort(songList, artistCompare);
+
+        System.out.println("Sort by Artist - " + songList);
     }
 
     void getSongs() {
