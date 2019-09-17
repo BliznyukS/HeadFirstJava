@@ -23,6 +23,14 @@ public class Jukebox3 {
         }
     }
 
+    class RatingCompare implements Comparator<Song> {
+
+        @Override
+        public int compare(Song one, Song two) {
+            return one.getRating().compareTo(two.getRating());
+        }
+    }
+
     private void go() {
         getSongs();
         System.out.println("Before sort - " + songList);
@@ -33,6 +41,12 @@ public class Jukebox3 {
         Collections.sort(songList, artistCompare);
 
         System.out.println("Sort by Artist - " + songList);
+
+        RatingCompare ratingCompare = new RatingCompare();
+        Collections.sort(songList, ratingCompare);
+
+        System.out.println("Sort by rating - " + songList);
+
     }
 
     void getSongs() {
