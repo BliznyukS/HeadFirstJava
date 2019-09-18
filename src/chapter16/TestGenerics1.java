@@ -1,7 +1,5 @@
 package chapter16;
 
-import chapter12.Animate;
-
 public class TestGenerics1 {
 
     public static void main(String[] args) {
@@ -10,7 +8,7 @@ public class TestGenerics1 {
 
     public void go() {
         Animal[] animals = {new Dog(), new Cat(), new Dog()};
-        Dog[] dogs = {new Dog(), new  Dog(), new  Dog(),};
+        Dog[] dogs = {new Dog(), new Dog(), new Dog(),};
         takeAnimals(animals);
         takeAnimals(dogs);
 
@@ -28,13 +26,15 @@ public class TestGenerics1 {
             System.out.println("animal eats");
         }
     }
+
     class Dog extends Animal {
-        void bark(){
+        void bark() {
 
         }
     }
+
     class Cat extends Animal {
-        void meow(){
+        void meow() {
 
         }
     }
