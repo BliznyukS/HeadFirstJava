@@ -1,5 +1,6 @@
 package chapter16;
 
+import java.util.Comparator;
 import java.util.TreeSet;
 
 public class TestTree {
@@ -9,7 +10,7 @@ public class TestTree {
     }
 
     private void go() {
-        Book b1 = new Book("How cats works");
+        Book b1 = new Book("How cats work");
         Book b2 = new Book("Build you body again");
         Book b3 = new Book("Finding Nemo");
 
