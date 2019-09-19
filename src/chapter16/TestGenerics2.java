@@ -16,6 +16,13 @@ public class TestGenerics2 {
         animals.add(new Dog());
 
         takeAnimals(animals);
+
+/*        ArrayList<Dog> dogs = new ArrayList<Dog>();
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+        takeAnimals(dogs);
+
+ */
     }
 
     public void takeAnimals(ArrayList<Animal> animals) {
