@@ -19,23 +19,4 @@ public class TestGenerics1 {
             a.eat();
         }
     }
-
-
-    abstract class Animal {
-        void eat() {
-            System.out.println("animal eats");
-        }
-    }
-
-    class Dog extends Animal {
-        void bark() {
-
-        }
-    }
-
-    class Cat extends Animal {
-        void meow() {
-
-        }
-    }
 }
