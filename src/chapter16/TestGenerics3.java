@@ -16,6 +16,14 @@ public class TestGenerics3 {
         animals.add(new Dog());
 
         takeAnimals(animals);
+        testAnimals(animals);
+    }
+
+    private <T extends Animal> void testAnimals(ArrayList<T> animals) {
+
+        for (Animal a : animals) {
+            a.eat();
+        }
     }
 
     private void takeAnimals(ArrayList<? extends Animal> animals) {
