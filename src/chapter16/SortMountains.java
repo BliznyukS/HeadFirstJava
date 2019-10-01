@@ -8,7 +8,7 @@ public class SortMountains {
 
     LinkedList<Mountain> mtn = new LinkedList<Mountain>();
 
-    class NameCompare implements Comparator<Mountain>{
+    class NameCompare implements Comparator<Mountain> {
 
         @Override
         public int compare(Mountain one, Mountain two) {
@@ -43,9 +43,6 @@ public class SortMountains {
         HeightCompare hc = new HeightCompare();
         Collections.sort(mtn, hc);
         System.out.println("By height : \n" + mtn);
-
-
-
     }
 
 
@@ -54,7 +51,7 @@ public class SortMountains {
         String name;
         int height;
 
-        Mountain(String n, int h){
+        Mountain(String n, int h) {
             name = n;
             height = h;
         }
